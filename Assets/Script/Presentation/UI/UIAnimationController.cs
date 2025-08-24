@@ -37,6 +37,11 @@ namespace Script.Presentation.UI
             director.Play();
         }
 
+        public void ResetAnimationStats()
+        {
+            director.time = 0;
+        }
+        
         private void OnAnimationFinish(PlayableDirector director)
         {
             onAnimationFinish.Invoke();

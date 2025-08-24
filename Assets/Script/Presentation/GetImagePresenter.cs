@@ -33,7 +33,7 @@ namespace Script.Presentation
                 RewardImageData data = _imageService.GetImage(item.imageName);
                 return new RewardItemImageInfo()
                 {
-                    imageName = data.itemName,
+                    imageName = item.itemName,
                     itemImage = data.itemImage
                 };
             }
@@ -44,7 +44,7 @@ namespace Script.Presentation
                 RewardImageData data = new()
                 {
                     itemImage = result.image,
-                    itemName = result.image.name
+                    itemName = item.itemName
                 };
                 _imageService.AddToDataSet(data);
                 _imageService.SaveImageToDisk(data);

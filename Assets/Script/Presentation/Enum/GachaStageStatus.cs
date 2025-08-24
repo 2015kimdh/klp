@@ -7,10 +7,8 @@
     {
         Init = 0,
         Normal = 1,
-        ZoomIn = 2,
-        Catch = 3,
-        Drop = 4,
-        TryOpen = 5,
-        OpenResult = 6
+        Catch = 2,
+        TryOpen = 3,
+        OpenResult = 4
     }
 }

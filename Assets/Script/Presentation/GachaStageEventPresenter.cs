@@ -1,4 +1,5 @@
-﻿using Script.Presentation.Enum;
+﻿using System;
+using Script.Presentation.Enum;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -26,6 +27,7 @@ namespace Script.Presentation
         
         #region Private Field
 
+        [SerializeField]
         private GachaStageStatus _status = GachaStageStatus.Init;
 
         #endregion
@@ -35,6 +37,11 @@ namespace Script.Presentation
         public UnityEvent<GachaStageStatus> gachaStageStatusEvent;
 
         #endregion
+
+        private void Start()
+        {
+            StageStatus = GachaStageStatus.Normal;
+        }
 
         public void ChangeStatus(GachaStageStatus targetStatus)
         {
