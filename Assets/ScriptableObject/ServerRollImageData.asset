@@ -13,7 +13,13 @@ MonoBehaviour:
   m_Name: ServerRollImageData
   m_EditorClassIdentifier: Assembly-CSharp:Script.Data:ImageDataServerRollBundle
   bundle:
-  - hash: 
-    image: {fileID: 0}
-  - hash: 
-    image: {fileID: 0}
+  - hash: 0
+    image: {fileID: 21300000, guid: f66a01c725663d145b13b2bbba44fae3, type: 3}
+  - hash: 1
+    image: {fileID: 21300000, guid: 77556fd55e4f5974fb9ba53ea3e2d7e3, type: 3}
+  - hash: 2
+    image: {fileID: 21300000, guid: f7a8f5aa01ea0f64a84392b8dc8a152b, type: 3}
+  - hash: 3
+    image: {fileID: 21300000, guid: e0991cd3b60d41048b9e870e6d6f0ff4, type: 3}
+  - hash: 4
+    image: {fileID: 21300000, guid: f8ebfe5bdeed6c5418a460df6341e104, type: 3}

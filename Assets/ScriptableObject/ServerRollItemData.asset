@@ -12,4 +12,29 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: ServerRollItemData
   m_EditorClassIdentifier: Assembly-CSharp:Script.Data:ItemDataServerRollBundle
-  bundle: []
+  bundle:
+  - itemHash: 0
+    brandName: "\uBAA8\uB098\uBBF8"
+    itemName: "\uBAA8\uB098\uBBF8 \uBCFC\uD39C"
+    price: 1000
+    rarity: 0
+  - itemHash: 1
+    brandName: Apple
+    itemName: "Apple \uC5D0\uC5B4\uD31F"
+    price: 229000
+    rarity: 1
+  - itemHash: 2
+    brandName: "\uD5C8\uBA3C \uBC00\uB7EC"
+    itemName: "\uD5C8\uBA3C \uBC00\uB7EC \uC790\uC138 \uAD50\uC815 \uC758\uC790"
+    price: 1590000
+    rarity: 2
+  - itemHash: 3
+    brandName: Apple
+    itemName: "\uC544\uC774\uD3F0 16 Pro"
+    price: 2200000
+    rarity: 3
+  - itemHash: 4
+    brandName: Hyundai
+    itemName: "\uD604\uB300 \uC2A4\uD3EC\uD2F0\uC9C0"
+    price: 34900000
+    rarity: 4

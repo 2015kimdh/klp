@@ -1,10 +1,12 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Script.Data;
 using UnityEngine;
 
 namespace Script.ServerRoll
 {
     // 임의의 데이터를 반환하는 서버 역할의 객체
+    [Serializable]
     public class ServerDataBase : MonoBehaviour
     {
         #region Serialize Fields
@@ -35,7 +37,7 @@ namespace Script.ServerRoll
         public ItemDataServerRoll GetGachaResult()
         {
             var gachaResult = gachaResultList.resultList[_gachaResultIndex];
-            _gachaResultIndex = (_gachaResultIndex + 1) % 6;
+            _gachaResultIndex = (_gachaResultIndex + 1) % gachaResultList.resultList.Count;
             var itemResult = GetItemData(gachaResult.hash);
             return itemResult;
         }

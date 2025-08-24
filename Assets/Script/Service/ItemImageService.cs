@@ -1,17 +1,23 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Linq;
-using Script.Service.BaseClass;
 using UnityEngine;
 
 namespace Script.Service
 {
-    public class ItemImageService : BaseService
+    public class ItemImageService : MonoBehaviour
     {
-        public static readonly string DirectoryPath = Application.persistentDataPath + "/Image";
-        public static readonly string ImagePath = Application.persistentDataPath + "/RewardItem";
-        public static readonly string Png = ".png";
+        private static string _directoryPath;
+        private static string _imagePath;
+        private static string Png = ".png";
 
         public RewardItemDataSet dateSet = new();
+
+        public void Awake()
+        {
+            _directoryPath = Application.persistentDataPath + "/Image";
+            _imagePath = Application.persistentDataPath + "/RewardItem";
+        }
 
         public RewardImageData GetImage(string imageName)
         {
@@ -20,7 +26,7 @@ namespace Script.Service
             else
                 return null;
         }
-        
+
         public bool CheckImageOnService(string imageName)
         {
             var result = dateSet.images.Select(x => x.itemName == imageName);
@@ -37,7 +43,7 @@ namespace Script.Service
         public void SaveImageToDisk(RewardImageData imageData)
         {
             File.WriteAllBytes(
-                DirectoryPath + ImagePath + "/" + imageData.itemName + ".png",
+                _directoryPath + _imagePath + "/" + imageData.itemName + ".png",
                 SpriteToTexture(imageData.itemImage).EncodeToPNG());
         }
 
@@ -45,15 +51,15 @@ namespace Script.Service
         {
             dateSet.images.Add(imageData);
         }
-        
+
         private bool TryGetImageFromDisk(string imageName)
         {
-            if (!Directory.Exists(DirectoryPath + ImagePath))
+            if (!Directory.Exists(_directoryPath + _imagePath))
             {
-                Directory.CreateDirectory(DirectoryPath + ImagePath);
+                Directory.CreateDirectory(_directoryPath + _imagePath);
             }
 
-            byte[] fileData = File.ReadAllBytes(DirectoryPath + ImagePath + "/" + imageName + Png);
+            byte[] fileData = File.ReadAllBytes(_directoryPath + _imagePath + "/" + imageName + Png);
 
             Texture2D tex = new Texture2D(0, 0);
             var result = tex.LoadImage(fileData);

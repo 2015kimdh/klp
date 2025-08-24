@@ -14,6 +14,11 @@ namespace Script.Info
         public string itemHash = "";
 
         /// <summary>
+        /// 브랜드 이름
+        /// </summary>
+        public string brandName = "";
+        
+        /// <summary>
         /// 아이템 이름
         /// </summary>
         public string itemName = "";
