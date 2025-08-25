@@ -1,3 +1,5 @@
+// 코드 출처 : https://qiita.com/ruccho_vector/items/651f760b3240a253bd1d
+
 Shader "Custom/Blur"
 {
 	Properties
